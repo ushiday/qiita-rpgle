@@ -46,7 +46,7 @@
       ) JOB(Q250801C11 )
 
       CHGVAR     VAR(&W@PARM2   ) VALUE(-234        )
-      /*従来）ＳＢＭＪＯＢ制約で同型でもエラー*/
+      /*従来）ＳＢＭＪＯＢ制約の暗黙型１５Ｐ　５に合わせれば正常*/
       SBMJOB CMD(                                          +
         CALL PGM(Q250801R) PARM( &W@PARM2            )     +
       ) JOB(Q250801C12 )
