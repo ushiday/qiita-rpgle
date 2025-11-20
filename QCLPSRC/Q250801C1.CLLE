@@ -26,7 +26,6 @@
       /*======================================*/
        DCL VAR(&P@PARM1  ) TYPE(*DEC ) LEN(003 0)
        DCL VAR(&W@PARM1  ) TYPE(*DEC ) LEN(005 0)
-       DCL VAR(&W@PARM2  ) TYPE(*DEC ) LEN(015 5)
        DCL VAR(&C@PARM1  ) TYPE(*CHAR) LEN(003  ) STG(*DEFINED ) DEFVAR(&W@PARM1  )
 
       /*======================================*/
@@ -45,10 +44,10 @@
         CALL PGM(Q250101R) PARM( &W@PARM1            )     +
       ) JOB(Q250801C11 )
 
-      CHGVAR     VAR(&W@PARM2   ) VALUE(-234        )
+      CHGVAR     VAR(&W@PARM1   ) VALUE(-234        )
       /*従来）ＳＢＭＪＯＢ制約の暗黙型１５Ｐ　５に合わせれば正常*/
       SBMJOB CMD(                                          +
-        CALL PGM(Q250801R) PARM( &W@PARM2            )     +
+        CALL PGM(Q250801R) PARM( &W@PARM1            )     +
       ) JOB(Q250801C12 )
 
       /*従来）文字列相当にキャストして渡す方法*/
